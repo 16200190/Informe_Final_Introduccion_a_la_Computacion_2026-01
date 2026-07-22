@@ -1,0 +1,435 @@
+\documentclass[12pt,a4paper]{report}
+
+
+\usepackage[dvipsnames, table]{xcolor}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel} % Configuración para español
+\usepackage[margin=2.5cm]{geometry} % Márgenes estándar académicos
+\usepackage{graphicx} % Para inclusión de imágenes
+\usepackage{booktabs} % Para tablas con acabado profesional
+\usepackage{amsmath, amssymb} % Para expresiones matemáticas
+\usepackage{titlesec} % Para personalizar títulos de capítulos
+\usepackage{microtype} % Mejora la tipografía y el espaciado
+\usepackage{lipsum} % Opcional: solo para generar texto de relleno si se desea
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=green
+}
+
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\huge}
+  {\filleft\Large\chapterframename\ \thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filright}
+  [\vspace{1ex}\titlerule]
+
+\newcommand{\chapterframename}{Capítulo}
+
+
+\title{\textbf{Análisis Curricular y Estándares de Acreditación:\\ Ingeniería de Sistemas vs. Ciencias de la Computación en el Contexto de la UNMSM}}
+\author{\textbf{Romeo Piero Trujillo Agüero} \and \textbf{Carlos Joel Carrasco Macedo}}
+\date{\the\year}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\scshape\LARGE Universidad Nacional Mayor de San Marcos \par}
+    \vspace{0.5cm}
+    {\large Universidad del Perú, Decana de América \par}
+    \vspace{0.5cm}
+    {\large Facultad de Ingeniería de Sistemas e Informática \par}
+    \vspace{1.5cm}
+    \includegraphics[width=0.4\textwidth]{universidad-nacional-mayor-de-san-marcos-logo-png_seeklogo-390422.png}\\
+    
+    \vspace{1cm}
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\huge \bfseries Análisis Curricular y Estándares de Acreditación:\\ Ingeniería de Sistemas vs. Ciencias de la Computación \par}
+    \rule{\linewidth}{0.5mm} \\[1.5cm]
+    
+    \noindent
+    \begin{minipage}[t]{0.50\textwidth}
+        \begin{flushleft} \large
+            \emph{Integrantes:}\\
+            Romeo Piero \textsc{Trujillo Agüero}\\
+            Carlos Joel \textsc{Carrasco Macedo}
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{0.40\textwidth}
+        \begin{flushright} \large
+            \emph{Curso:} \\
+            Introduccion a la Computacion
+        \end{flushright}
+    \end{minipage}
+    
+    \vfill
+    {\large Lima, Perú \par}
+    {\large \the\year \par}
+\end{titlepage}
+
+
+\pagenumbering{roman}
+
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+Este informe presenta un análisis profundo y multidimensional entre la Ingeniería de Sistemas y las Ciencias de la Computación. Se abordan sus orígenes teóricos, mallas curriculares típicas y su relación con la tecnología subyacente. Como eje central, el documento evalúa los estándares de acreditación nacional e internacional (como ICACIT y ABET) exigidos para ambas disciplinas, con un énfasis crítico en su aplicación y desafíos dentro de la Universidad Nacional Mayor de San Marcos (UNMSM) y su impacto en la competitividad global del egresado.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This report presents a profound and multidimensional analysis between Systems Engineering and Computer Science. It addresses their theoretical origins, typical curricular networks, and relationship with underlying technology. As a central axis, the document evaluates the national and international accreditation standards (such as ICACIT and ABET) required for both disciplines, with a critical emphasis on their application and challenges within the Universidad Nacional Mayor de San Marcos (UNMSM) and their impact on the global competitiveness of the graduate.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+
+
+\chapter{Introducción}
+
+\section{Contexto del Problema: La Crisis Epistemológica de las Disciplinas Informáticas en América Latina}
+Durante las últimas tres décadas, la región latinoamericana experimentó una adopción acelerada pero desestructurada de las tecnologías de la información. A diferencia de Norteamérica y Europa, donde la taxonomía de las disciplinas computacionales se estableció con claridad meridiana desde la década de 1970 —separando el diseño físico del hardware (\textit{Computer Engineering}), la fundamentación algorítmica teórica (\textit{Computer Science}) y la integración tecnológica orientada a los negocios (\textit{Information Systems} y \textit{Software Engineering})—, en países como el Perú se produjo un fenómeno de convergencia terminológica bajo la denominación de ``Ingeniería de Sistemas''.
+
+Esta nomenclatura fue inicialmente concebida en la posguerra para describir un enfoque puramente holístico e interdisciplinario, orientado a gestionar la complejidad de proyectos a gran escala (como los aeroespaciales o militares). Sin embargo, en el ámbito académico civil latinoamericano, el término comenzó a utilizarse de manera genérica para englobar casi cualquier actividad relacionada con el espectro del software. Esta generalización diluyó severamente las fronteras epistemológicas de la profesión. 
+
+Hoy en día, la Cuarta Revolución Industrial y el mercado tecnológico global exigen una hiperespecialización y una separación estricta de roles. Hacer converger la teoría computacional dura (centrada en la reducción del orden de complejidad algorítmica $O(n)$ y el estudio de autómatas) con la arquitectura empresarial (centrada en la investigación de operaciones y el alineamiento estratégico) bajo un mismo título profesional genera una ambigüedad perjudicial en el perfil de egreso. Las discrepancias entre lo que la industria global espera de un científico de la computación frente a un ingeniero de sistemas hacen imperativo que instituciones académicas de prestigio demarquen sus dominios, basándose estrictamente en marcos de referencia internacionales como los dictados por la \textit{Association for Computing Machinery} (ACM) y el \textit{IEEE Computer Society} \cite{acm2013}.
+
+\section{La Importancia Estratégica de la Acreditación Universitaria en el Siglo XXI}
+En una economía del conocimiento intrínsecamente globalizada, el título universitario tradicional requiere de un mecanismo de validación empírica que trascienda las fronteras nacionales. En el ámbito de la ingeniería y la tecnología, la \textit{Accreditation Board for Engineering and Technology} (ABET) en Estados Unidos y el \textit{Instituto de Calidad y Acreditación de Programas de Computación, Ingeniería y Tecnología} (ICACIT) en el Perú dictaminan los estándares supremos de calidad educativa \cite{abet2023, icacit2022}.
+
+El paradigma actual de la acreditación ha abandonado la simple auditoría de ``recursos de entrada'' (como la cantidad de libros en la biblioteca o el número de horas lectivas) para enfocarse de manera estricta en la evaluación de los \textit{Student Outcomes} (Resultados del Estudiante). La acreditación bajo los lineamientos de ABET e ICACIT garantiza que el egresado posee las competencias exactas y demostrables para ejercer su profesión a nivel internacional. Este reconocimiento se encuentra respaldado por tratados multilaterales de homologación directa, como el \textit{Washington Accord} para programas de ingeniería aplicada y el \textit{Seoul Accord} para programas de computación. 
+
+En la praxis académica, someterse a estos estándares obliga a las universidades a erradicar la superposición de mallas curriculares. Un programa acreditado en Ingeniería de Sistemas debe demostrar, a través de proyectos de grado o \textit{Capstone Projects}, su capacidad para resolver problemas complejos de integración organizacional. Ejemplos de esto incluyen la aplicación de la teoría de colas para simular y optimizar tiempos de atención en entidades financieras, o el diseño de arquitecturas de software para sistemas integrados de ventas e inventarios en redes de distribución comercial. Por el contrario, un programa en Ciencias de la Computación debe evidenciar su rigor en la innovación de arquitecturas de software subyacentes, la programación a bajo nivel y las matemáticas discretas puras.
+
+\section{Objetivos de la Investigación}
+\subsection{Objetivo General}
+Desarrollar un análisis crítico, epistemológico y curricular que delimite con precisión científica las fronteras entre la Ingeniería de Sistemas y las Ciencias de la Computación, evaluando el impacto directo de los estándares de acreditación internacional (ABET e ICACIT) en la reestructuración de la calidad educativa superior en el Perú.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+    \item \textbf{Analizar el desarrollo histórico-filosófico:} Identificar los hitos fundacionales que separan la teoría de la computabilidad y el análisis algorítmico de la Teoría General de Sistemas aplicada a las organizaciones y ecosistemas sociotécnicos.
+    \item \textbf{Contrastar el diseño curricular y el soporte matemático:} Evaluar las diferencias estructurales entre ambas mallas de estudio, demostrando la divergencia entre la aplicación de matemáticas discretas puras frente al uso de investigación de operaciones, estadística aplicada y análisis de la información.
+    \item \textbf{Evaluar la aplicación de estándares de calidad:} Determinar cómo los criterios de evaluación de la \textit{Engineering Accreditation Commission} (EAC) difieren diametralmente de los de la \textit{Computing Accreditation Commission} (CAC) al auditar las competencias profesionales del estudiante.
+\end{itemize}
+
+\section{Justificación y Alcance en el Marco Institucional de la UNMSM}
+Como investigadores y estudiantes de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la Universidad Nacional Mayor de San Marcos, la Decana de América, resulta una necesidad académica imperiosa definir y consolidar la identidad de nuestra casa de estudios. En el contexto de los esfuerzos institucionales por lograr y mantener acreditaciones de alta calidad, este informe proporciona un sustrato analítico exhaustivo que clarifica el perfil del ingeniero de sistemas sanmarquino. 
+
+El alcance de esta investigación no se limita a una mera revisión bibliográfica; proyecta las exigencias del mercado corporativo global sobre la realidad académica local. Al comprender la necesidad de integrar dominios como la arquitectura empresarial, el gobierno de datos masivos (\textit{Big Data}) y la optimización de sistemas mediante modelado y simulación, el presente documento pretende servir como una herramienta de consulta para la mejora continua del plan de estudios, garantizando que el perfil de egreso de la FISI cumpla y supere los rigurosos estándares exigidos por la industria tecnológica moderna.
+
+
+\chapter{Fundamentos Epistemológicos e Históricos}
+
+Para comprender la brecha sustancial que separa a la Ingeniería de Sistemas de las Ciencias de la Computación, es imperativo realizar una disección de sus raíces epistemológicas. La confusión contemporánea surge de la creencia errónea de que ambas disciplinas nacieron como subproductos de la invención del microprocesador. Por el contrario, ambas ramas poseen un linaje científico e histórico independiente, respondiendo a paradigmas filosóficos distintos que dictaminan cómo sus profesionales perciben, modelan y resuelven los problemas de la realidad.
+
+\section{Génesis de las Ciencias de la Computación: La Búsqueda Matemática de la Computabilidad}
+
+Las Ciencias de la Computación no son, en su esencia más pura, una disciplina sobre las computadoras, al igual que la astronomía no es la ciencia de los telescopios. Esta rama del conocimiento nace en el terreno fértil de la lógica matemática abstracta y la filosofía fundacional de las matemáticas, décadas antes de la construcción del primer transistor electrónico.
+
+\subsection{El \textit{Entscheidungsproblem} y la Máquina de Turing}
+El punto de inflexión histórico ocurre en la década de 1930. El matemático David Hilbert había planteado el \textit{Entscheidungsproblem} (el problema de decisión), desafiando a la comunidad científica a encontrar un algoritmo general que pudiera determinar la veracidad o falsedad de cualquier proposición matemática formal. Fue Alan Turing, junto con Alonzo Church (creador del Cálculo Lambda), quien demostró que tal algoritmo universal es imposible \cite{turing1936}. 
+
+Para lograr esta demostración, Turing conceptualizó un modelo matemático abstracto: la ``Máquina de Turing''. Este dispositivo teórico, capaz de manipular símbolos en una cinta infinita basándose en un conjunto de reglas finitas, sentó las bases de lo que hoy conocemos como arquitectura de von Neumann y procesamiento secuencial.
+
+\subsection{El Objeto de Estudio: El Algoritmo y la Complejidad}
+Desde este hito fundacional, el científico de la computación se enfoca en el estudio de la \textit{computabilidad} (qué problemas pueden ser resueltos por una máquina) y la \textit{complejidad algorítmica} (con qué eficiencia de tiempo y memoria pueden ser resueltos). Su ciencia es fundamentalmente formal y deductiva. La disciplina exige descender a los niveles más profundos de abstracción lógica, utilizando las matemáticas discretas como lenguaje principal. 
+
+Históricamente y en la práctica moderna, este rigor se traduce en el dominio de arquitecturas de bajo nivel. Por ejemplo, la optimización extrema requerida en el desarrollo de microcódigo, la manipulación de registros en lenguajes ensambladores (como las rutinas de gestión de memoria en procesadores clásicos Z80 o en la arquitectura actual x86-64), o la creación de motores lógicos para compiladores y sistemas operativos. El científico de la computación abstrae el problema del mundo físico y lo reduce a estructuras de datos (árboles, grafos, pilas) y operaciones lógicas elementales.
+
+\section{Evolución de la Ingeniería de Sistemas: La Gestión de la Complejidad Sociotécnica}
+
+Diametralmente opuesta en su génesis, la Ingeniería de Sistemas no desciende de las matemáticas puras ni de la lógica simbólica, sino de la necesidad imperiosa de gestionar la complejidad logística, industrial y militar surgida tras la Segunda Guerra Mundial y durante la Guerra Fría.
+
+\subsection{La Teoría General de Sistemas y la Cibernética}
+El sustrato filosófico de esta ingeniería fue postulado por el biólogo austriaco Ludwig von Bertalanffy con su \textit{Teoría General de Sistemas} (TGS). Bertalanffy argumentó que un sistema es una entidad compleja cuyas propiedades no pueden ser comprendidas únicamente estudiando sus partes de forma aislada, sino analizando las dinámicas e interacciones entre dichas partes \cite{bertalanffy1968}. Paralelamente, Norbert Wiener introducía la \textit{Cibernética}, el estudio del control y la comunicación en el animal y la máquina.
+
+\subsection{La Institucionalización y la Investigación de Operaciones}
+La Ingeniería de Sistemas como disciplina aplicada fue formalizada en la década de 1940 en los \textit{Bell Telephone Laboratories} y perfeccionada en el Departamento de Defensa de los Estados Unidos y la NASA durante el Programa Apolo. Enfrentados al desafío de construir redes de telecomunicaciones a escala continental o enviar seres humanos a la luna, los ingenieros comprendieron que la falla de los proyectos no radicaba en la falta de tecnología, sino en la deficiente integración de los subsistemas y los equipos humanos.
+
+Para lograr esta integración matemática, la disciplina se apoyó fuertemente en la \textbf{Investigación de Operaciones}. Esta rama de las matemáticas aplicadas provee las herramientas necesarias para la toma de decisiones en entornos de incertidumbre. Mediante la programación lineal, la teoría de inventarios y la teoría de colas, el ingeniero de sistemas es capaz de modelar un entorno de alta complejidad —como el flujo transaccional de una red bancaria o la logística de distribución de una corporación multinacional— y simular estadísticamente su comportamiento para optimizar recursos antes de implementar cualquier solución tecnológica de software o hardware.
+
+\section{Divergencia de Paradigmas: Reduccionismo frente a Holismo}
+
+La brecha epistemológica entre ambas profesiones queda finalmente definida por el paradigma bajo el cual operan y abordan la realidad.
+
+\subsection{El Enfoque Reduccionista-Constructivo de la Computación}
+La Ciencia de la Computación opera bajo un paradigma \textbf{reduccionista}. El profesional aísla el componente algorítmico del ruido del mundo exterior. Para el científico, el contexto social, organizacional o económico del software es secundario frente a la corrección matemática y la eficiencia del código. Su objetivo es deconstruir el problema hasta llegar a operaciones binarias, optimizar la carga computacional (por ejemplo, reducir el tiempo de ejecución de una búsqueda en bases de datos de $O(n)$ a $O(\log n)$) y construir el sistema de "abajo hacia arriba" (\textit{bottom-up}).
+
+\subsection{El Enfoque Holístico-Integrador de Sistemas}
+La Ingeniería de Sistemas opera bajo un paradigma \textbf{holístico}. El ingeniero reconoce que el software no existe en el vacío; está incrustado en un ecosistema sociotécnico (personas, normativas, presupuestos, hardware \textit{legacy} y objetivos de negocio). Su aproximación es "de arriba hacia abajo" (\textit{top-down}). Antes de que se escriba una sola línea de código, el profesional debe emplear metodologías formales de análisis (como el Proceso Unificado) para levantar los requerimientos del negocio, diseñar la arquitectura de datos y validar mediante modelos de simulación que la tecnología adoptada resolverá efectivamente la necesidad de la organización, garantizando el retorno de inversión y la viabilidad operativa.
+
+
+\chapter{Análisis Curricular y Enfoque Académico}
+
+El contraste filosófico y epistemológico descrito en los capítulos precedentes se materializa de forma tangible en el rigor y la estructura de las mallas curriculares. El perfil de un profesional se forja a través de los conocimientos y herramientas que la academia le exige dominar. A continuación, se desglosa cómo los programas de formación, con especial énfasis en la realidad académica de la Universidad Nacional Mayor de San Marcos (UNMSM), traducen estas teorías en competencias comprobables según los estándares internacionales \cite{swebok2014, acm2013}.
+
+\section{Estructura de la Malla en Ingeniería de Sistemas (Caso FISI-UNMSM)}
+
+El plan de estudios de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la UNMSM está estratégicamente diseñado para formar líderes en tecnología y arquitectura empresarial. El currículo demuestra que el dominio del código es apenas una herramienta; el fin último es la optimización sistémica y la rentabilidad organizacional.
+
+\subsection{Matemáticas Aplicadas e Investigación de Operaciones}
+Mientras que otras ramas de la informática abordan la matemática desde un plano puramente abstracto, en la Ingeniería de Sistemas la matemática es el motor de la toma de decisiones corporativas. La formación exige el dominio de la \textit{Investigación de Operaciones}, donde el estudiante aplica modelos de programación lineal, métodos simplex y optimización de redes para maximizar utilidades y minimizar costos operativos sujetos a restricciones reales de inventario y capital humano.
+
+Este enfoque cuantitativo alcanza su madurez en asignaturas críticas como \textit{Modelos y Simulación}. El ingeniero de sistemas sanmarquino está capacitado para analizar entornos de alta carga transaccional empleando técnicas estadísticas avanzadas, como la Teoría de Colas. Por ejemplo, al evaluar la eficiencia de atención al cliente en una entidad financiera (como una Caja Municipal), el estudiante no se limita a proponer software; debe extraer datos históricos rigurosos —tales como los tiempos de llegada y de servicio de una muestra sustancial de clientes (ej. 150 a más individuos)—, diseñar el modelo conceptual del sistema y ejecutar decenas de corridas de simulación estadísticas. Este rigor matemático permite validar, con márgenes de confianza y error predefinidos, si la reestructuración de un flujo de atención es viable antes de invertir en desarrollo tecnológico.
+
+\subsection{Análisis de Sistemas de Información y Arquitectura Empresarial}
+El diseño de software industrial requiere una profunda comprensión de la dinámica del negocio. A través de asignaturas de \textit{Análisis de Sistemas}, el currículo entrena al estudiante en el uso de metodologías robustas y orientadas a objetos. Empleando marcos formales como el Proceso Unificado (RUP), el alumno aprende a orquestar el ciclo de vida del software.
+
+El desarrollo de este perfil exige competencias para identificar actores clave, estructurar casos de uso de negocio y de sistema, y levantar requerimientos funcionales y no funcionales de alta complejidad. Un ejemplo clásico del rigor académico en esta área es el modelado y propuesta de sistemas integrados (ERPs) para la gestión de ventas, facturación e inventario en empresas distribuidoras reales. El ingeniero diseña la arquitectura completa de la solución, asegurando que cada módulo tecnológico se alinee milimétricamente con el mapa de procesos de la organización.
+
+\subsection{Gestión de Ecosistemas de Datos: Big Data y Gobernanza}
+En un ecosistema corporativo impulsado por los datos, el ingeniero de sistemas no se restringe a programar el motor de almacenamiento, sino que diseña la arquitectura para gobernar la información. La malla curricular integra sólidamente el gobierno de datos masivos (\textit{Big Data}). El estudiante adquiere maestría en el despliegue de infraestructuras analíticas, dominando ecosistemas de bases de datos no relacionales (sistemas documentales como MongoDB) y modelando flujos de extracción y transformación de datos (ETL). Todo esto converge en la inteligencia de negocios, utilizando plataformas avanzadas de visualización analítica, como Tableau, para traducir conjuntos masivos de datos en tableros de control (\textit{dashboards}) que dictan la estrategia gerencial.
+
+\section{Estructura de la Malla en Ciencias de la Computación}
+
+En marcado contraste, los currículos de Computación dictados por los lineamientos internacionales de la \textit{Association for Computing Machinery} (ACM) y el \textit{IEEE Computer Society} reducen drásticamente la carga de gestión empresarial, financiera y de modelado de negocios para sumergir al estudiante en la teoría matemática pura de la máquina \cite{acm2013}.
+
+\subsection{Matemáticas Discretas y Teoría de la Complejidad}
+El andamiaje de la carrera de Ciencias de la Computación está compuesto por las matemáticas discretas. El estudio intensivo de la teoría de grafos, la combinatoria, la lógica de predicados y el álgebra booleana es esencial. El objetivo es que el estudiante adquiera la capacidad de analizar algoritmos formalmente utilizando la notación asintótica. Debe demostrar matemáticamente, a través de demostraciones formales, el comportamiento límite del código, evaluando rigurosamente por qué un algoritmo de orden $O(N \log N)$ es escalable para conjuntos masivos, mientras que un orden $O(N^2)$ provocará el colapso del tiempo de ejecución computacional.
+
+\subsection{Arquitectura Interna: Autómatas, Compiladores y Sistemas Base}
+El científico de la computación es entrenado para construir la tecnología fundacional que otros ingenieros utilizarán en el futuro. Esto requiere la aprobación de cursos como \textit{Teoría de Autómatas y Lenguajes Formales}, que otorgan las competencias para diseñar analizadores léxicos, sintácticos y semánticos. Esta línea de conocimiento culmina en el desarrollo de \textbf{Compiladores}. Su dominio opera desde los cimientos del hardware, capacitándolo para el desarrollo de motores lógicos, \textit{kernels} de sistemas operativos, bibliotecas criptográficas y sistemas embebidos, donde la abstracción matemática interactúa directamente con los registros de memoria y la Unidad Aritmético Lógica (ALU) del procesador.
+
+\section{Áreas de Intersección: La Ingeniería de Software}
+
+A pesar de la profunda divergencia en sus bases epistemológicas y mallas curriculares, ambas disciplinas convergen en un terreno común de aplicación industrial: la \textit{Ingeniería de Software}. 
+
+De acuerdo con el \textit{Software Engineering Body of Knowledge} (SWEBOK) establecido por la IEEE \cite{swebok2014}, la construcción de sistemas de software a gran escala y de grado crítico exige un enfoque interdisciplinario. Por un lado, se requiere la eficiencia algorítmica y la optimización de estructuras de datos aportada por las Ciencias de la Computación para garantizar un rendimiento óptimo bajo estrés. Por el otro, es indispensable el levantamiento correcto de requerimientos, la gestión de riesgos operacionales, la planificación de la calidad y el diseño de la arquitectura empresarial aportados por la Ingeniería de Sistemas. Es en este punto de intersección operativa donde los egresados de ambas profesiones colaboran sinérgicamente dentro del mercado laboral.
+
+
+\chapter{Estándares de Acreditación y Calidad Educativa}
+
+\section{El Modelo de Acreditación en la UNMSM: Retos y Perspectivas}
+
+El proceso de acreditación en la Universidad Nacional Mayor de San Marcos (UNMSM) se rige primordialmente bajo las directrices del Sistema Nacional de Evaluación, Acreditación y Certificación de la Calidad Educativa (SINEACE), en concordancia con la Ley Universitaria N° 30220 \cite{sineace2020}. Para las facultades de ingeniería y ciencias de la computación, este modelo representa una transición estructural desde un enfoque puramente administrativo hacia una cultura de mejora continua y rendición de cuentas basada en resultados de aprendizaje.
+
+Uno de los principales retos que afronta la UNMSM radica en la burocracia institucional y la rigidez de los procesos de actualización curricular, los cuales a menudo colisionan con el dinamismo que demanda la industria tecnológica actual. Además, la limitación en el presupuesto público restringe la velocidad de modernización de los laboratorios de cómputo y la infraestructura de red, factores críticos evaluados por comités internacionales. Sin embargo, las perspectivas son optimistas: la acreditación actúa como un catalizador para la homologación internacional de los planes de estudio, elevando el prestigio de los egresados y facilitando el acceso a fondos concursables para investigación, promoviendo así la vinculación directa entre la academia y el ecosistema empresarial global \cite{unmsm2022}.
+
+\section{Criterios de Acreditación Internacional para Ingeniería (ICACIT / ABET)}
+
+La acreditación internacional bajo el modelo ABET (Accreditation Board for Engineering and Technology), representada en el Perú a través de ICACIT (Instituto de Calidad y Acreditación de Programas de Computación, Ingeniería y Tecnología), se fundamenta en criterios rigurosos orientados a garantizar que los estudiantes alcancen competencias profesionales globales. El núcleo del modelo se divide en criterios generales aplicados a todas las ramas de la ingeniería \cite{abet2023}:
+
+\begin{enumerate}
+    \item \textbf{Estudiantes:} Evaluación del progreso, asesoría académica y cumplimiento de requisitos de graduación.
+    \item \textbf{Objetivos Educacionales del Programa (PEOs):} Logros comprobables que se espera que los egresados alcancen de 3 a 5 años después de la graduación.
+    \item \textbf{Resultados del Estudiante (Student Outcomes):} Competencias técnicas y blandas adquiridas al momento de culminar la carrera (ej. resolución de problemas complejos, diseño ético, comunicación efectiva, trabajo en equipo).
+    \item \textbf{Mejora Continua:} Procesos sistemáticos de recolección de datos y evaluación para corregir brechas pedagógicas.
+    \item \textbf{Plan de Estudios (Curriculum):} Un año académico de matemáticas avanzadas y ciencias básicas, junto con un componente sólido de ciencias de la ingeniería y diseño integrado.
+    \item \textbf{Cuerpo Docente (Faculty):} Profesores con calificaciones académicas y experiencia profesional idóneas para liderar el proceso de enseñanza y la investigación.
+    \item \textbf{Instalaciones:} Laboratorios, bibliotecas e infraestructura tecnológica que provean un ambiente seguro y propicio para el aprendizaje.
+    \item \textbf{Apoyo Institucional:} Recursos financieros y liderazgo administrativo estables.
+\end{enumerate}
+
+\cite{icacit2022} resalta que formar parte del Acuerdo de Washington a través de ICACIT asegura la movilidad internacional de los ingenieros peruanos, dado que sus títulos son reconocidos como sustancialmente equivalentes en países como Estados Unidos, Canadá y el Reino Unido.
+
+\section{Estándares Específicos para Programas de Ciencias de la Computación (CSAB / ABET)}
+
+Los programas de Ciencias de la Computación son evaluados bajo los criterios de la \textit{Computing Accreditation Commission} (CAC) de ABET, guiados por la sociedad técnica CSAB (\textit{Computer Science Accreditation Board}). A diferencia de los programas de ingeniería general, los estándares para Ciencias de la Computación enfatizan con mayor rigor los fundamentos matemáticos y la teoría computacional abstracta \cite{csab2021}.
+
+Los criterios específicos exigen que el plan de estudios incluya:
+\begin{itemize}
+    \item Al menos 1.3 años académicos (aproximadamente 40 créditos) de ciencias de la computación que cubran algoritmos, estructuras de datos, diseño de software, conceptos de lenguajes de programación y arquitectura de computadores.
+    \item Fundamentos matemáticos robustos, que incorporen obligatoriamente matemáticas discretas, cálculo diferencial e integral, y probabilidad y estadística.
+    \item El desarrollo de una base científica que incluya laboratorios experimentales, orientando al estudiante hacia el método científico.
+\end{itemize}
+El estándar exige que los estudiantes demuestren la capacidad de aplicar la teoría de las ciencias de la computación y los fundamentos del diseño de software para construir soluciones complejas y optimizadas, garantizando un balance entre el análisis matemático puro y la implementación práctica \cite{acmieee2020}.
+
+\section{Brechas Curriculares: Adaptación de los Planes de Estudio a los Estándares Globales}
+
+En el contexto peruano, y de manera particular en universidades tradicionales, subsiste una marcada confusión histórica entre las denominaciones de las carreras tecnológicas. Históricamente, los planes de estudio de "Ingeniería de Sistemas" se estructuraron bajo un enfoque híbrido que fusionaba la administración de empresas, la investigación de operaciones y las tecnologías de la información de corte comercial. Esto genera una brecha significativa respecto a las directrices globales definidas por la ACM (\textit{Association for Computing Machinery}) y el IEEE Computer Society \cite{acmieee2020}.
+
+Las brechas más críticas se centran en:
+\begin{itemize}
+    \item \textbf{Falta de rigor en la teoría de la computación:} Deficiencias en asignaturas como Autómatas, Complejidad Algorítmica y Semántica de Lenguajes dentro de los currículos que buscan alinearse con las Ciencias de la Computación.
+    \item \textbf{Subestimación del Diseño de Ingeniería:} En los programas que adoptan la Ingeniería de Sistemas, a menudo se carece de asignaturas integradoras de diseño de infraestructura y arquitectura empresarial bajo estándares internacionales de ingeniería (\textit{Systems Engineering Standard ISO/IEC/IEEE 15288}).
+    \item \textbf{Mejora continua no institucionalizada:} Los procesos de medición de \textit{Student Outcomes} suelen ejecutarse con fines puramente de auditoría externa y no como un ciclo integrado y natural dentro del quehacer pedagógico docente \cite{sineace2020}.
+\end{itemize}
+
+
+\chapter{Interacción con la Arquitectura de Hardware y Tecnologías Avanzadas}
+
+\section{El Hardware desde la Ciencia de la Computación (Bajo Nivel y Optimización)}
+
+Desde la perspectiva de las Ciencias de la Computación, el hardware es concebido como una plataforma de ejecución cuyas restricciones físicas deben ser dominadas para maximizar la eficiencia algorítmica. La interacción se centra en el bajo nivel: el entendimiento profundo de la arquitectura de computadores (Von Neumann vs. Harvard), la jerarquía de memoria (cachés L1, L2, L3) y la predicción de saltos a nivel de CPU \cite{patterson2021}.
+
+Un científico de la computación analiza cómo el código de alto nivel se traduce a instrucciones de ensamblador, buscando minimizar la complejidad computacional temporal y espacial. Conceptos clave incluyen:
+\begin{itemize}
+    \item \textbf{Optimización del Caché (\textit{Cache Locality}):} Diseño de algoritmos conscientes de la memoria (\textit{cache-oblivious algorithms}) que aprovechan la proximidad espacial y temporal de los datos para evitar fallos de caché (\textit{cache misses}).
+    \item \textbf{Paralelismo a Nivel de Instrucción (ILP) y Multithreading:} Explotación de arquitecturas multinúcleo mediante técnicas de paralelismo masivo utilizando GPUs (interfaz CUDA u OpenCL) para cómputo de alto rendimiento (HPC) y modelos de Inteligencia Artificial \cite{hennessy2019}.
+\end{itemize}
+
+\section{El Hardware desde la Ingeniería de Sistemas (Infraestructura y Cloud Computing)}
+
+Para la Ingeniería de Sistemas, el hardware pierde su granularidad algorítmica y pasa a ser analizado como un recurso macroscópico interconectado que conforma la infraestructura tecnológica de una organización. El foco se desplaza del microprocesador individual hacia el centro de datos, las redes de comunicación y las plataformas de Cloud Computing \cite{kurose2021}.
+
+Bajo este enfoque, los ingenieros de sistemas diseñan e implementan arquitecturas de alta disponibilidad, escalabilidad y resiliencia basándose en:
+\begin{itemize}
+    \item \textbf{Virtualización y Abstracción:} Desacoplamiento del software respecto al hardware físico mediante hipervisores y tecnologías de contenedores (Docker, Kubernetes).
+    \item \textbf{Modelos de Servicio en la Nube:} Orquestación de infraestructura como servicio (IaaS), plataforma como servicio (PaaS) y software como servicio (SaaS) empleando proveedores globales (AWS, Azure, Google Cloud). El objetivo es optimizar el aprovisionamiento dinámico de recursos computacionales, balanceo de carga y políticas de recuperación ante desastres (DRP) \cite{clark2020}.
+\end{itemize}
+
+\section{Gestión de Datos: Big Data vs. Motores de Bases de Datos}
+
+La gestión de datos subraya una distinción metodológica crucial entre ambas disciplinas, delimitada por el volumen, la velocidad y la variedad de la información.
+
+\begin{itemize}
+    \item \textbf{Motores de Bases de Datos Tradicionales (Relacionales y NoSQL):} Se fundamentan en sistemas de almacenamiento diseñados para transacciones seguras (propiedades ACID en RDBMS como PostgreSQL u Oracle) o para escalabilidad horizontal específica (motores NoSQL como MongoDB, Cassandra). El diseño se orienta al modelado conceptual, normalización y optimización de consultas indexadas \cite{silberschatz2020}.
+    \item \textbf{Ecosistemas de Big Data:} Surgen cuando los motores tradicionales colapsan ante volúmenes a escala de petabytes. Involucran almacenamiento distribuido (como HDFS) y frameworks de procesamiento paralelo masivo (Apache Spark, Hadoop). Mientras que la Ingeniería de Sistemas gestiona la infraestructura física/virtual del clúster y la canalización de datos (\textit{Data Pipelines}), las Ciencias de la Computación diseñan los algoritmos distribuidos subyacentes y los modelos matemáticos analíticos que operan sobre dichos flujos masivos de datos \cite{white2015}.
+\end{itemize}
+
+
+\chapter{Perfiles Profesionales y Mercado Laboral Acreditado}
+
+\section{Roles Clásicos en Ingeniería de Sistemas}
+
+El Ingeniero de Sistemas se posiciona como un integrador de tecnologías y un estratega organizacional de TI. Sus roles principales en el mercado laboral formal demandan habilidades de gestión, diseño de arquitecturas empresariales y gobernanza tecnológica \cite{sommerville2019}:
+
+\begin{itemize}
+    \item \textbf{Director de Tecnologías de la Información (CIO / CTO):} Responsable de alinear la estrategia tecnológica con los objetivos de negocio de la corporación.
+    \item \textbf{Arquitecto de Soluciones / Infraestructura Nube:} Diseñador de la topología de red, seguridad y servidores, asegurando la escalabilidad operativa de los sistemas corporativos.
+    \item \textbf{Gerente de Proyectos Tecnológicos (PMO / Scrum Master):} Líder en la aplicación de metodologías ágiles o tradicionales (PMBOK) para el despliegue de sistemas complejos a tiempo y dentro del presupuesto.
+    \item \textbf{Ingeniero DevOps / SRE (Site Reliability Engineer):} Especialista encargado del puente entre el desarrollo de software y la operación de TI, automatizando flujos de despliegue continuo (CI/CD) y garantizando la estabilidad del entorno de producción.
+\end{itemize}
+
+\section{Roles Clásicos en Ciencias de la Computación}
+
+El Científico de la Computación posee un perfil enfocado en la creación, innovación y optimización de nuevo software, algoritmos y tecnologías base. Su campo de acción laboral está estrechamente vinculado a la I+D+i (Investigación, Desarrollo e Innovación) \cite{acmieee2020}:
+
+\begin{itemize}
+    \item \textbf{Ingeniero de Software de Core / Sistemas Integrados:} Desarrollador de sistemas operativos, compiladores, motores de videojuegos o bases de datos de alta eficiencia.
+    \item \textbf{Científico de Datos / Ingeniero de Aprendizaje Automático (Machine Learning Engineer):} Especialista en la construcción e implementación de modelos predictivos avanzados, redes neuronales profundas y procesamiento de lenguaje natural.
+    \item \textbf{Investigador en Computación / Criptógrafo:} Profesional dedicado a la academia o laboratorios de desarrollo tecnológico avanzados, resolviendo problemas de optimización matemática complejos o diseñando nuevos protocolos de seguridad informática.
+    \item \textbf{Diseñador de Algoritmos / Desarrollador Backend Backend de Alto Rendimiento:} Encargado de estructurar soluciones de software abstractas sujetas a estrictas restricciones de latencia y procesamiento en tiempo real.
+\end{itemize}
+
+\section{El Impacto de Egresar de un Programa Acreditado (Contexto Peruano y Global)}
+
+La graduación de un programa que cuenta con una acreditación internacional vigente (como ABET o ICACIT) altera sustancialmente las dinámicas de empleabilidad y proyección internacional del egresado en el contexto peruano actual.
+
+A nivel local, las corporaciones multinacionales y las entidades gubernamentales priorizan la contratación de egresados de programas acreditados, dado que esto garantiza un estándar mínimo verificado de competencias técnicas y éticas \cite{sineace2020}. A nivel global, el impacto se potencia significativamente gracias a la equivalencia sustancial de títulos. Un egresado de la UNMSM de una carrera acreditada puede aplicar de forma directa a puestos de trabajo en el extranjero o postular a escuelas de posgrado de alto prestigio internacional (Ph.D. o Maestrías) sin requerir revalidaciones curriculares complejas ni costosas reválidas de títulos, eliminando las barreras geográficas tradicionales del mercado profesional de TI \cite{icacit2022}.
+
+
+\chapter{Análisis Comparativo Directo}
+
+\section{Matriz de Diferencias Fundamentales y Requisitos de Calidad}
+
+Para esclarecer de manera inequívoca los límites y confluencias entre ambas disciplinas bajo estándares de acreditación, se presenta la siguiente matriz analítica:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{5.2cm}|p{5.2cm}|}
+\hline
+\textbf{Criterio de Control} & \textbf{Ciencias de la Computación} & \textbf{Ingeniería de Sistemas} \\ \hline
+\textbf{Objeto de Estudio} & El software, los algoritmos y la computación como fenómeno teórico y práctico \cite{acmieee2020}. & Los sistemas complejos de información y su integración en las organizaciones \cite{sommerville2019}. \\ \hline
+\textbf{Base Matemática} & Énfasis severo en Matemática Discreta, Álgebra Lineal Abstracta y Teoría de Grafos. & Enfoque en Cálculo Multivariable, Probabilidad, Estadística y Modelos de Optimización. \\ \hline
+\textbf{Interacción con Hardware} & Optimización de microarquitecturas, gestión de memoria (Bajo Nivel) y paralelismo \cite{patterson2021}. & Gestión de Infraestructura de red, virtualización, telecomunicaciones y Cloud Computing \cite{kurose2021}. \\ \hline
+\textbf{Agencia Acreditadora} & CAC / ABET bajo estándares específicos promovidos por CSAB \cite{csab2021}. & EAC / ABET bajo criterios generales de Ingeniería y normas SINEACE \cite{abet2023}. \\ \hline
+\textbf{Perfil de Salida Principal} & Diseñador de algoritmos, científico de datos, arquitecto de software de bajo nivel. & Gestor de proyectos TI, arquitecto empresarial, ingeniero DevOps, director de sistemas. \\ \hline
+\end{tabular}
+\caption{Matriz Comparativa Directa bajo Estándares de Calidad Internacional.}
+\label{tab:matriz_comparativa}
+\end{table}
+
+\section{Sinergia Interdisciplinaria en Proyectos Complejos}
+
+A pesar de sus marcadas diferencias metodológicas, el éxito en la implementación de megaproyectos tecnológicos de vanguardia depende de la articulación armónica y simbiótica entre ingenieros de sistemas y científicos de la computación. Las disciplinas no se canibalizan, sino que se complementan mutuamente en las distintas fases del ciclo de vida del desarrollo tecnológico.
+
+Por ejemplo, consideremos el despliegue corporativo de un sistema de conducción autónoma o de análisis predictivo de fraudes financieros en tiempo real para el sector bancario nacional:
+\begin{enumerate}
+    \item El \textbf{Científico de la Computación} asume la responsabilidad del núcleo matemático del proyecto: formula los nuevos algoritmos de visión artificial, optimiza los modelos de aprendizaje profundo y garantiza que la tasa de procesamiento de datos por segundo en la GPU alcance la latencia mínima requerida \cite{hennessy2019}.
+    \item El \textbf{Ingeniero de Sistemas} interviene para viabilizar la operación de dicho núcleo en el mundo real: diseña la arquitectura empresarial distribuida en la nube que hospedará el modelo, gestiona la seguridad de la red para mitigar ciberataques, estructura los flujos de datos (\textit{pipelines}) mediante plataformas de Big Data, y lidera la gobernanza del proyecto asegurando la viabilidad económica y organizacional del sistema \cite{sommerville2019}.
+\end{enumerate}
+
+
+\chapter{Conclusiones y Recomendaciones}
+
+\section{Conclusiones sobre el Perfil Profesional y la Acreditación}
+
+\begin{enumerate}
+    \item La adopción de estándares internacionales de acreditación (ABET/ICACIT) es un imperativo impostergable para elevar la competitividad de las carreras del área de computación en la UNMSM, puesto que permite sincerar las mallas curriculares frente a las demandas globales del mercado laboral y la academia internacional.
+    \item Ciencias de la Computación e Ingeniería de Sistemas constituyen dos cuerpos de conocimiento claramente diferenciados pero complementarios. Mientras la primera profundiza en los fundamentos teóricos, la algoritmia y la optimización a bajo nivel de software, la segunda se orienta hacia el pensamiento sistémico, la gestión de la infraestructura tecnológica y la integración de soluciones en organizaciones complejas.
+    \item Egresar de un programa acreditado internacionalmente dota al estudiante peruano de una ventaja competitiva crítica, habilitando mecanismos ágiles de movilidad profesional, homologación de títulos mediante el Acuerdo de Washington y el acceso directo a redes globales de investigación avanzada.
+\end{enumerate}
+
+\section{Recomendaciones para la Mejora Continua en la UNMSM}
+
+\begin{enumerate}
+    \item \textbf{Actualización Curricular Inmediata y Sinceramiento de Denominaciones:} Se recomienda a las autoridades de la UNMSM reestructurar drásticamente los planes de estudio vigentes para alinearlos rigurosamente con los currículos internacionales de ACM/IEEE. Es crucial separar nítidamente los perfiles de egreso y evitar mallas híbridas obsoletas que confunden las competencias del egresado.
+    \item \textbf{Institucionalización de la Cultura de la Medición:} Reemplazar las evaluaciones punitivas de fin de ciclo por procesos automatizados y reflexivos de medición continua de los Resultados del Estudiante (\textit{Student Outcomes}). Los docentes deben ser capacitados sistemáticamente en metodologías de evaluación basadas en rúbricas estandarizadas bajo criterios ABET.
+    \textbf{Modernización de Laboratorios y Alianzas con la Industria:} Asignar partidas presupuestales prioritarias para la actualización de la infraestructura de hardware de bajo nivel (unidades GPU dedicadas, sistemas embebidos) e infraestructura de red corporativa. Asimismo, se debe incentivar la formalización de convenios estratégicos con los grandes proveedores de Cloud Computing (AWS, Google, Azure) para proveer certificaciones oficiales a los estudiantes dentro de sus asignaturas regulares.
+\end{enumerate}
+
+
+
+% --- BIBLIOGRAFÍA ---
+
+\begin{thebibliography}{9}
+
+\bibitem{abet2023}
+  Accreditation Board for Engineering and Technology (ABET). (2023).
+  \emph{Criteria for Accrediting Computing Programs}. Baltimore, MD: ABET.
+  
+\bibitem{icacit2022}
+  Instituto de Calidad y Acreditación de Programas de Computación, Ingeniería y Tecnología (ICACIT). (2022).
+  \emph{Manual de Acreditación para Programas de Ingeniería}. Lima, Perú.
+
+\bibitem{turing1936}
+  Turing, A. M. (1936).
+  On computable numbers, with an application to the Entscheidungsproblem.
+  \emph{Proceedings of the London Mathematical Society}, 42(1), 230-265.
+
+\bibitem{bertalanffy1968}
+  Bertalanffy, L. von (1968).
+  \emph{Teoría General de los Sistemas: Fundamentos, desarrollo, aplicaciones}.
+  Fondo de Cultura Económica.
+
+\bibitem{acm2013}
+  Joint Task Force on Computing Curricula, Association for Computing Machinery (ACM) \& IEEE Computer Society. (2013).
+  \emph{Computer Science Curricula 2013: Curriculum Guidelines for Undergraduate Degree Programs in Computer Science}. New York, NY: ACM.
+
+\bibitem{swebok2014}
+  Bourque, P., \& Fairley, R. E. (Eds.). (2014).
+  \emph{Guide to the Software Engineering Body of Knowledge (SWEBOK), Version 3.0}. IEEE Computer Society.
+
+\bibitem{acmieee2020} Association for Computing Machinery (ACM) \& IEEE Computer Society. (2020). \textit{Computing Curricula 2020: Paradigms for Global Computing Education}. ACM/IEEE-CS. https://www.acm.org/education/curricula-recommendations
+
+\bibitem{abet2023} ABET. (2023). \textit{Criteria for Accrediting Engineering Programs, 2023–2024}. ABET Engineering Accreditation Commission. https://www.abet.org
+
+\bibitem{clark2020} Clark, T., \& Jones, M. (2020). \textit{Enterprise Architecture and Cloud Computing Foundations} (2nd ed.). Springer.
+
+\bibitem{csab2021} CSAB. (2021). \textit{Criteria for Accrediting Computing Programs: Specific Program Criteria for Computer Science}. CSAB / ABET Computing Accreditation Commission.
+
+\bibitem{hennessy2019} Hennessy, J. L., \& Patterson, D. A. (2019). \textit{Computer Architecture: A Quantitative Approach} (6th ed.). Morgan Kaufmann.
+
+\bibitem{icacit2022} ICACIT. (2022). \textit{Manual de Criterios de Acreditación para Programas de Ingeniería}. Instituto de Calidad y Acreditación de Programas de Computación, Ingeniería y Tecnología. http://www.icacit.org.pe
+
+\bibitem{kurose2021} Kurose, J. F., \& Ross, K. W. (2021). \textit{Computer Networking: A Top-Down Approach} (8th ed.). Pearson.
+
+\bibitem{patterson2021} Patterson, D. A., \& Hennessy, J. L. (2021). \textit{Computer Organization and Design: The Hardware/Software Interface} (6th ed.). Morgan Kaufmann.
+
+\bibitem{silberschatz2020} Silberschatz, A., Korth, H. F., \& Sudarshan, S. (2020). \textit{Database System Concepts} (7th ed.). McGraw-Hill.
+
+\bibitem{sineace2020} SINEACE. (2020). \textit{Modelo de Acreditación para Programas de Estudios de Educación Superior Universitaria}. Sistema Nacional de Evaluación, Acreditación y Certificación de la Calidad Educativa.
+
+\bibitem{sommerville2019} Sommerville, I. (2019). \textit{Introduction to Systems Engineering}. Addison-Wesley.
+
+\bibitem{unmsm2022} Universidad Nacional Mayor de San Marcos. (2022). \textit{Plan Estratégico Institucional (PEI) 2022-2026}. Oficina Central de Planificación, UNMSM.
+
+\bibitem{white2015} White, T. (2015). \textit{Hadoop: The Definitive Guide} (4th ed.). O'Reilly Media.
+\end{thebibliography}
+
+\end{document}
